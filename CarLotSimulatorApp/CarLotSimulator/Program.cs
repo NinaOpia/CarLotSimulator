@@ -1,10 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+
 
 namespace CarLotSimulator
 {
     class Program
     {
+        public static Car corvette;
+        public static Car ford;
+        public static Car jeep;
+
+        public static string Year { get; set; }
+        public static string Make { get; set; }
+        public static string Model { get; set; }
+        public static string EngineNoise { get; set; }
+        public static string HonkNoise { get; set; }
+        public static bool IsDriveable { get; set; }
+
         static void Main(string[] args)
         {
             //TODO
@@ -23,7 +36,8 @@ namespace CarLotSimulator
 
             // Set the properties utilizing the 3 different ways we learned about, one way for each car
 
-            var jeremysCarlot = new Carlot();
+            var jeremysCarLot = new CarLot();
+            Console.WriteLine($"Number of cars in the lot: {CarLot.numberOfCars}\n");
 
             //Dot notation syntax
             var corvette = new Car();
@@ -34,25 +48,35 @@ namespace CarLotSimulator
             corvette.HonkNoise = "Honk!!";
             corvette.IsDriveable = true;
 
-            jeremysCarlot.ParkingLot.Add(corvette);
+            jeremysCarLot.ParkingLot.Add(corvette);
+
+            CarLot.numberOfCars++;
+            Console.WriteLine($"Number of cars in the lot: {CarLot.numberOfCars}\n");
 
             //Object initializer syntax
-            var ford = new Car()
+            var ford = new Car();
             {
-                Year = "2004",
-                Make = "Ford",
-                Model = "Focus",
-                EngineNoise = "shake shake wake",
-                HonkNoise = "tiny beep",
-                IsDriveable = false
+                Year = "2004";
+                Make = "Ford";
+                Model = "Focus";
+                EngineNoise = "shake shake live";
+                HonkNoise = "tiny beep";
+                IsDriveable = false;
             };
+           
 
-            jeremysCarlot.ParkingLot.Add(ford);
+            jeremysCarLot.ParkingLot.Add(ford);
+
+            CarLot.numberOfCars++;
+            Console.WriteLine($"Number of cars in the lot: {CarLot.numberOfCars}\n");
 
             //Custom constructor
             var jeep = new Car("2017", "Jeep", "Wrangler Unlimited", "Vroom!!", "Honk!!", true);
 
-            jeremysCarlot.ParkingLot.Add(jeep);
+            jeremysCarLot.ParkingLot.Add(jeep);
+
+            CarLot.numberOfCars++;
+            Console.WriteLine($"Number of cars in the lot: {CarLot.numberOfCars}\n");
 
             //*************BONUS X 2*************//
 
@@ -61,7 +85,7 @@ namespace CarLotSimulator
             //Instanciate the Carlot at the beginning of the program and as you create a car add the car to the list.
             //At the end iterate through the list printing each of car's Year, Make, and Model to the console
 
-            foreach (var car in jeremysCarlot.ParkingLot)
+            foreach (var car in jeremysCarLot.ParkingLot)
             {
                 Console.WriteLine($"Year: {car.Year}");
                 Console.WriteLine($"Make: {car.Make}");

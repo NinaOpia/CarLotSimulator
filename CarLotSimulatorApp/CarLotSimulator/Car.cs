@@ -35,7 +35,7 @@ namespace CarLotSimulator
 
         public bool IsDriveable { get; set; }
 
-        public object ListOfCars { get; internal set; }
+        public object ListOfCars { get; set; }
 
         public void MakeEngineNoise(string engineNoise)
         {
