@@ -50,15 +50,15 @@ namespace CarLotSimulator
 
             jeremysCarLot.ParkingLot.Add(corvette);
 
-            CarLot.numberOfCars++;
-            Console.WriteLine($"Number of cars in the lot: {CarLot.numberOfCars}\n");
+            //CarLot.numberOfCars++;
+            //Console.WriteLine($"Number of cars in the lot: {CarLot.numberOfCars}\n");
 
             //Object initializer syntax
             var ford = new Car();
             {
                 Year = "2004";
                 Make = "Ford";
-                Model = "Focus";
+                Model = "Focus";    
                 EngineNoise = "shake shake live";
                 HonkNoise = "tiny beep";
                 IsDriveable = false;
@@ -67,16 +67,16 @@ namespace CarLotSimulator
 
             jeremysCarLot.ParkingLot.Add(ford);
 
-            CarLot.numberOfCars++;
-            Console.WriteLine($"Number of cars in the lot: {CarLot.numberOfCars}\n");
+            //CarLot.numberOfCars++;
+            //Console.WriteLine($"Number of cars in the lot: {CarLot.numberOfCars}\n");
 
             //Custom constructor
             var jeep = new Car("2017", "Jeep", "Wrangler Unlimited", "Vroom!!", "Honk!!", true);
 
             jeremysCarLot.ParkingLot.Add(jeep);
 
-            CarLot.numberOfCars++;
-            Console.WriteLine($"Number of cars in the lot: {CarLot.numberOfCars}\n");
+            //CarLot.numberOfCars++;
+            //Console.WriteLine($"Number of cars in the lot: {CarLot.numberOfCars}\n");
 
             //*************BONUS X 2*************//
 

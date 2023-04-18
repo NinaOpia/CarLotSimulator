@@ -8,9 +8,12 @@ namespace CarLotSimulator
 {
 	public class Car
 	{
-		public Car()
+        //Default constructor
+        public Car()
 		{
-		}
+            CarLot.numberOfCars++;
+            Console.WriteLine($"Number of cars in the lot: {CarLot.numberOfCars}\n");
+        }
 
         //Custom constructor
         public Car(string year, string make, string model, string engineNoise, string honkNoise, bool isDriveable)
@@ -21,6 +24,8 @@ namespace CarLotSimulator
             EngineNoise = engineNoise;
             HonkNoise = honkNoise;
             IsDriveable = isDriveable;
+            CarLot.numberOfCars++;
+            Console.WriteLine($"Number of cars in the lot: {CarLot.numberOfCars}\n");
         }
 
 		public string Year { get; set; }
